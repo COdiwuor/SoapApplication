@@ -1,8 +1,9 @@
 package com.soap.soap;
 
 
-import localhost.university.GetUniversityRequest;
-import localhost.university.GetUniversityResponse;
+
+
+import localhost.university.*;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -28,6 +29,34 @@ public class UniversityEndpoint {
         return response;
 
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUniversitiesAtLocationRequest")
+    @ResponsePayload
+    public GetAllUniversitiesResponse getAllUniversitiesAtLocation(@RequestPayload GetAllUniversitiesAtLocationRequest request) {
+        GetAllUniversitiesResponse response = new GetAllUniversitiesResponse();
+        for (University university : universityRepository.getAllAtLocation(request.getLocation())) {
+            response.getUniversity().add(university);
+        }
+
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUniversitiesRequest")
+    @ResponsePayload
+    public GetAllUniversitiesResponse getAllUniversities(@RequestPayload GetAllUniversitiesRequest request) {
+        GetAllUniversitiesResponse response = new GetAllUniversitiesResponse();
+        for (University university : universityRepository.getAll()) {
+            response.getUniversity().add(university);
+        }
+
+        return response;
+    }
+
+
+
+
+
+
 //    @Autowired
 //    public CountryEndpoint(CountryRepository countryRepository) {
 //        this.countryRepository = countryRepository;
