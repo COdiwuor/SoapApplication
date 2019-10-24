@@ -1,9 +1,8 @@
+
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                   xmlns:gs="http://localhost/university">
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getAllUniversitiesAtLocationRequest>
-            <gs:location>Kiambu</gs:location>
-        </gs:getAllUniversitiesAtLocationRequest>
+        <gs:getAllUniversitiesRequest/>
     </soapenv:Body>
 </soapenv:Envelope>

@@ -4,7 +4,9 @@ import localhost.university.University;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -12,7 +14,7 @@ public class UniversityRepository {
 
     private Map<String, University> universities = new HashMap<>();
 
-    @PostConstruct
+    @PostConstruct // run method when class is injected
     private void LoadData(){
         University strath = new University();
         strath.setLocation("Ole Sangale");
@@ -36,4 +38,22 @@ public class UniversityRepository {
     public University getUniversityByName(String name){
         return universities.get(name);
     }
+
+
+    public List<University> getAll(){
+        return new ArrayList<>(universities.values());
+    }
+
+    public List<University> getAllAtLocation(String location) {
+        List<University> universities = new ArrayList<>();
+
+        for (University value : universities) {
+            if (value.getLocation().equals(location)) {
+                universities.add(value);
+            }
+        }
+        return universities;
+    }
+
+
 }

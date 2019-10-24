@@ -9,6 +9,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
     <xs:element name="getUniversityResponse">
         <xs:complexType>
             <xs:sequence>
@@ -16,6 +17,23 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:element name="getAllUniversitiesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="university" type="tns:university"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllUniversitiesAtLocationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="location" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="university">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
@@ -24,4 +42,6 @@
             <xs:element name="type" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
+
+
 </xs:schema>
