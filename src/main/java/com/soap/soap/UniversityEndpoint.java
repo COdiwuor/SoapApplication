@@ -13,7 +13,6 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 public class UniversityEndpoint {
     private static final String NAMESPACE_URI = "http://localhost/university";
 
-
     private final UniversityRepository universityRepository;
 
     public UniversityEndpoint(UniversityRepository universityRepository) {
