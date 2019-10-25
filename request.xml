@@ -1,5 +1,6 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://localhost/university"> <soapenv:Header/>
+                  xmlns:gs="http://localhost/university">
+    <soapenv:Header/>
     <soapenv:Body>
         <gs:getUniversityRequest>
             <gs:name>Strathmore</gs:name>
