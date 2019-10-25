@@ -23,7 +23,7 @@ public class UniversityEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUniversityRequest")
     @ResponsePayload
-    public GetUniversityResponse getCountry(@RequestPayload GetUniversityRequest request) {
+    public GetUniversityResponse getUniversity(@RequestPayload GetUniversityRequest request) {
         GetUniversityResponse response = new GetUniversityResponse();
         response.setUniversity(universityRepository.getUniversityByName(request.getName()));
         return response;
