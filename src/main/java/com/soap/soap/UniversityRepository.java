@@ -22,18 +22,21 @@ public class UniversityRepository {
         strath.setName("Strathmore");
         strath.setYearFounded(String.valueOf(1968));
         universities.put(strath.getName(), strath);
+        universities.put(strath.getLocation(), strath);
 
         University jkuat = new University();
         jkuat.setLocation("Juja");
         jkuat.setName("Jkuat");
         jkuat.setYearFounded(String.valueOf(1944));
         universities.put(jkuat.getName(), jkuat);
+        universities.put(jkuat.getLocation(), jkuat);
 
         University ku = new University();
         ku.setLocation("Kiambu");
         ku.setName("Kenyatta University");
         ku.setYearFounded(String.valueOf(1956));
         universities.put(ku.getName(),ku);
+        universities.put(ku.getLocation(),ku);
     }
 
     public University getUniversityByName(String name){
@@ -45,15 +48,8 @@ public class UniversityRepository {
         return new ArrayList<>(universities.values());
     }
 
-    public List<University> getAllAtLocation(String location) {
-        List<University> universities = new ArrayList<>();
-
-        for (University value : universities) {
-            if (value.getLocation().equals(location)) {
-                universities.add(value);
-            }
-        }
-        return universities;
+    public University getAllAtLocation(String location) {
+        return universities.get(location);
     }
 
 

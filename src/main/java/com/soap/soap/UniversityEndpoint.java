@@ -31,12 +31,9 @@ public class UniversityEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUniversitiesAtLocationRequest")
     @ResponsePayload
-    public GetAllUniversitiesResponse getAllUniversitiesAtLocation(@RequestPayload GetAllUniversitiesAtLocationRequest request) {
-        GetAllUniversitiesResponse response = new GetAllUniversitiesResponse();
-        for (University university : universityRepository.getAllAtLocation(request.getLocation())) {
-            response.getUniversity().add(university);
-        }
-
+    public GetAllUniversitiesAtLocationResponse getAllUniversitiesAtLocationResponse(@RequestPayload GetAllUniversitiesAtLocationRequest request) {
+        GetAllUniversitiesAtLocationResponse response = new GetAllUniversitiesAtLocationResponse();
+        response.setUniversity(universityRepository.getAllAtLocation(request.getLocation()));
         return response;
     }
 
