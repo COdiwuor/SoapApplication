@@ -43,7 +43,6 @@ public class UniversityRepository {
         return universities.get(name);
     }
 
-
     public List<University> getAll(){
         return new ArrayList<>(universities.values());
     }
