@@ -58,7 +58,7 @@
     <xs:element name="getAllYearFoundedResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="university" type="tns:university"/>
+                <xs:element maxOccurs="unbounded" name="university" type="tns:university"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
