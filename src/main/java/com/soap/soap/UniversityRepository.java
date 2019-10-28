@@ -3,6 +3,7 @@ package com.soap.soap;
 
 import localhost.university.University;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -35,11 +36,14 @@ public class UniversityRepository {
         ku.setLocation("Kiambu");
         ku.setName("Kenyatta University");
         ku.setYearFounded(String.valueOf(1956));
+
+
         universities.put(ku.getName(),ku);
         universities.put(ku.getLocation(),ku);
     }
 
     public University getUniversityByName(String name){
+        Assert.notNull(name,"University must not be null!");
         return universities.get(name);
     }
 
