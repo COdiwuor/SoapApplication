@@ -24,6 +24,7 @@ public class UniversityRepository {
         strath.setYearFounded(String.valueOf(1968));
         universities.put(strath.getName(), strath);
         universities.put(strath.getLocation(), strath);
+        universities.put(strath.getYearFounded(), strath);
 
         University jkuat = new University();
         jkuat.setLocation("Juja");
@@ -31,15 +32,15 @@ public class UniversityRepository {
         jkuat.setYearFounded(String.valueOf(1944));
         universities.put(jkuat.getName(), jkuat);
         universities.put(jkuat.getLocation(), jkuat);
+        universities.put(strath.getYearFounded(), strath);
 
         University ku = new University();
         ku.setLocation("Kiambu");
         ku.setName("Kenyatta University");
         ku.setYearFounded(String.valueOf(1956));
-
-
         universities.put(ku.getName(),ku);
         universities.put(ku.getLocation(),ku);
+        universities.put(ku.getYearFounded(),ku);
     }
 
     public University getUniversityByName(String name){
@@ -53,6 +54,9 @@ public class UniversityRepository {
 
     public University getAllAtLocation(String location) {
         return universities.get(location);
+    }
+    public University getAllYearFounded(String YearFounded){
+        return universities.get(YearFounded);
     }
 
 

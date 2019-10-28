@@ -46,11 +46,15 @@ public class UniversityEndpoint {
         for (University university : universityRepository.getAll()) {
             response.getUniversity().add(university);
         }
-
         return response;
     }
-
-
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllYearFoundedRequest")
+    @ResponsePayload
+    public GetAllYearFoundedResponse getAllYearFoundedResponse(@RequestPayload GetAllYearFoundedRequest request) {
+        GetAllYearFoundedResponse response = new GetAllYearFoundedResponse();
+        response.setUniversity(universityRepository.getAllYearFounded(request.getYearFounded()));
+        return response;
+    }
 
 
 

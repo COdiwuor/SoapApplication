@@ -48,6 +48,22 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="getAllYearFoundedRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="YearFounded" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllYearFoundedResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="university" type="tns:university"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
     <xs:complexType name="university">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
