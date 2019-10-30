@@ -9,7 +9,6 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 public class UniversityEndpoint {
     private static final String NAMESPACE_URI = "http://localhost/university";
-
     private final UniversityRepository universityRepository;
 
     @Autowired
@@ -52,27 +51,6 @@ public class UniversityEndpoint {
         return response;
     }
 
-
-
-
-//    @Autowired
-//    public CountryEndpoint(CountryRepository countryRepository) {
-//        this.countryRepository = countryRepository;
-//    }
-
-//    public CountryEndpoint() {
-//        this.countryRepository = new CountryRepository();
-//    }
-//
-//    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
-//    @ResponsePayload
-//    public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
-//        GetCountryResponse response = new GetCountryResponse();
-//        response.setCountry(countryRepository.findCountry(request.getName()));
-//
-//
-//        return response;
-//    }
 
 }
 
