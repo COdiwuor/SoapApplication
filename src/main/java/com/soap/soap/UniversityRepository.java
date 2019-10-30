@@ -37,7 +37,7 @@ public class UniversityRepository {
         University ku = new University();
         ku.setLocation("Kiambu");
         ku.setName("Kenyatta University");
-        ku.setYearFounded("1956");
+        ku.setYearFounded("1946");
         universities.put(ku.getName(),ku);
         universities.put(ku.getLocation(),ku);
         universities.put(ku.getYearFounded(),ku);
