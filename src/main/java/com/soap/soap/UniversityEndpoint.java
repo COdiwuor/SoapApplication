@@ -1,8 +1,4 @@
 package com.soap.soap;
-
-
-
-
 import localhost.university.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
